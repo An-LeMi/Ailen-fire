@@ -32,7 +32,7 @@ class Ship():
 			self.center -= self.ai_settings.ship_speed_factor
 
 		# Update rect value base on center
-		self.centerx = self.center	
+		self.rect.centerx = self.center	
 
 	def blitme(self):
 		"""Draw the ship at its current location."""
