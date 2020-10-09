@@ -6,6 +6,9 @@ class GameStats():
 		self.ai_settings = ai_settings
 		self.reset_stats()
 		self.game_active = False
+		file = open("Data/High.txt","r")
+		self.high_score = int(file.read())
+		self.level = 1
 
 	def reset_stats(self):
 		"""Initialize stastics that can change during the game."""	
