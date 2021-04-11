@@ -5,22 +5,26 @@ class Settings:
 		# Screen setting.
 		self.screen_width = 1200
 		self.screen_height = 800
-		self.bg_color = (230, 230, 230)
+		self.bg_color = (230, 230, 230)	
+
+		# Show fps flag
+        # self.fps = 60
+        # self.show_fps = True
 
 		#Ship setting
-		self.ship_speed_factor = 1.5
-		self.ship_limit = 3
+		self.ship_speed_factor = 10		
+		self.ship_limit = 3			# number ship
 
 		# Bullet setting.
 		self.bullet_speed_factor = 3
 		self.bullet_width = 3
 		self.bullet_height = 15
 		self.bullet_color = (60,60,60) #dark gray bullet
-		self.bullets_allowed = 1.5
+		self.bullets_allowed = 6		# number bullet in screen
 
 		#Alien setting.
 		self.alien_speed_factor = 3
-		self.fleet_drop_speed = 10
+		self.fleet_drop_speed = 50
 		# fleet_direction of 1 represents right; -1 represents left. 
 		self.fleet_direction = 1
 

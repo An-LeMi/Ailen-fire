@@ -68,7 +68,7 @@ def check_play_button(ai_settings, screen, stats, sb, play_button, ship, aliens,
 		pygame.mouse.set_visible(False)
 
 
-def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button, fps_count, fps):
 	""" Update images on the screen and flip to the new screen."""	
 
 	# Redraw the screen during each pass through the loop. 
@@ -83,6 +83,10 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_bu
 
 	# Draw score information
 	sb.show_score()
+
+	# Draw fps
+	fps_count.show_fps()
+	fps_count.prep_count(fps)
 
 	# Draw the play button if the game is inactive.
 	if not stats.game_active:
