@@ -7,10 +7,6 @@ class Settings:
 		self.screen_height = 800
 		self.bg_color = (230, 230, 230)	
 
-		# Show fps flag
-        # self.fps = 60
-        # self.show_fps = True
-
 		#Ship setting
 		self.ship_speed_factor = 10		
 		self.ship_limit = 3			# number ship
