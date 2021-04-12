@@ -1,6 +1,7 @@
 import sys  
 
 import pygame
+from time import sleep
 from settings import Settings
 from ship import Ship
 import game_functions as gf
@@ -9,7 +10,6 @@ from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
 from fps import FpsCount
-# from alien import Alien -  Don't need because don't use ailen in here
 
 
 def run_game():

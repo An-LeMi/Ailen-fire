@@ -5,6 +5,7 @@ from ship_bullet import ShipBullet
 from alien_bullet import AlienBullet
 from alien import Alien
 from time import sleep
+import sound
 
 def check_keydown_events(event, ai_settings, screen, ship, ship_bullets):	
 	# Respond to keypress.		
@@ -127,7 +128,8 @@ def check_bullet_alien_collisons(ai_settings, screen, stats, sb, ship, aliens, s
 		for aliens in collisions.values():
 			stats.score += ai_settings.alien_points * len(aliens)
 			sb.prep_score()	
-		check_high_score(stats, sb)	
+		check_high_score(stats, sb)
+		sound.alien_sound.play()	
 	if len(aliens) == 0:
 		# Destroy existing bullet and create new fleet
 		ship_bullets.empty()
@@ -149,6 +151,7 @@ def fire_bullet(ai_settings, screen, ship, ship_bullets):
 	if len(ship_bullets) < ai_settings.bullets_allowed:
 		new_bullet = ShipBullet(ai_settings, screen, ship) 
 		ship_bullets.add(new_bullet)
+		sound.ship_bullet_sound.play()
 
 def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):
     """Create an alien bullet"""
@@ -211,7 +214,7 @@ def update_aliens(ai_settings, screen, stats, sb, ship, aliens, ship_bullets, al
 
 	# Look for aliens and ship collisions
 	if pygame.sprite.spritecollideany(ship, aliens):
-		ship_hit(ai_settings, screen, stats, sb, ship, aliens, ship_bullets)
+		ship_hit(ai_settings, screen, stats, sb, ship, aliens, ship_bullets, alien_bullets)
 	# Look for alien hitting the bottom of screen
 	check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, ship_bullets)
 
@@ -234,6 +237,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, ship_bullets, alien_b
 
 		# Empty the list of aliens and ship_bullets
 		aliens.empty()
+		ship_bullets.empty()
 		ship_bullets.empty()
 
 		# Creat a new fleet and center the ship
