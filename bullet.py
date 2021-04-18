@@ -3,9 +3,9 @@ from pygame.sprite import Sprite
 
 
 class Bullet(Sprite):
-	"""A class to manage bullets fired from the ship"""
+	"""A class to manage bullets fired from aliens and ship"""
 	def __init__(self, ai_settings, screen):
-		"""Creat a bullet object at the ship's current position"""
+		"""Creat a bullet object position"""
 		super().__init__()    # The bullet inherit from Sprite
 		self.screen = screen
 

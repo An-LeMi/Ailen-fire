@@ -15,7 +15,7 @@ class AlienBullet(Bullet):
 
 	def update(self):
 		"""Move the bullet down the screen"""
-		# Update the demical position of the bullet
+		# Update the demical position of the alien bullet
 		self.y += self.speed_factor
 		# Update the rect position
 		self.rect.y = self.y
